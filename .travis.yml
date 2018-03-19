@@ -1,45 +1,22 @@
-# Project language
 language: php
-
-# Allows use container-based infrastructure
 sudo: false
 
-# Start mysql service
-services:
-  - mysql
-
-# Cache composer packages so "composer install" is faster
 cache:
-  directories:
-    - $HOME/.composer/cache
+    directories:
+        - $HOME/.composer/cache
 
-# Matrix to test in every php version
-matrix:
-  # Fast finish allows to set the build as "finished" even if the "allow_failures" matrix elements are not finished yet.
-  fast_finish: true
-  include:
-    - php: 7.0
-    - php: hhvm
-  allow_failures:
-    - php: hhvm
+php:
+    - '7.0'
+    - '7.1'
 
-# Define an environment variable
-env:
-  - SYMFONY_VERSION="3.0.*" DB=mysql
+before_install:
+    - phpenv config-rm xdebug.ini
+    - composer self-update
+    - mysql -e 'create database symfony'
 
-# Update composer
-before-install:
-  - composer self-update
+install:
+    - composer install
+    - php bin/console doctrine:schema:create
 
-# Install composer dependencies,
-# Create database, schema and fixtures
-# install:
-#  - composer install
-#  - cp app/config/parameters.yml.dist app/config/parameters.yml
-#  - php bin/console doctrine:database:create --env=test
-#  - php bin/console doctrine:schema:create --env=test
-#  - php bin/console doctrine:fixtures:load -n --env=test
-
-# Run script
 script:
-  - phpunit
+- vendor/bin/phpunit --colors
