@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "929def168bc6c4458826c1ec117703f8",
+    "content-hash": "154ccd2db4f0c4a53e0effd2538b01b3",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -2306,16 +2306,16 @@
         },
         {
             "name": "symfony/phpunit-bridge",
-            "version": "v3.3.2",
+            "version": "v4.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
-                "reference": "acae7416018ebe5a7a2d79b4221203b2b8aca5d3"
+                "reference": "14ffbbe2a72d0f6339b24eb830dd38cf63ba6630"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/acae7416018ebe5a7a2d79b4221203b2b8aca5d3",
-                "reference": "acae7416018ebe5a7a2d79b4221203b2b8aca5d3",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/14ffbbe2a72d0f6339b24eb830dd38cf63ba6630",
+                "reference": "14ffbbe2a72d0f6339b24eb830dd38cf63ba6630",
                 "shasum": ""
             },
             "require": {
@@ -2334,7 +2334,11 @@
             "type": "symfony-bridge",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.3-dev"
+                    "dev-master": "4.0-dev"
+                },
+                "thanks": {
+                    "name": "phpunit/phpunit",
+                    "url": "https://github.com/sebastianbergmann/phpunit"
                 }
             },
             "autoload": {
@@ -2364,7 +2368,7 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
-            "time": "2017-06-01T14:45:22+00:00"
+            "time": "2018-02-19T16:50:22+00:00"
         }
     ],
     "aliases": [],
@@ -2375,8 +2379,5 @@
     "platform": {
         "php": ">=5.5.9"
     },
-    "platform-dev": [],
-    "platform-overrides": {
-        "php": "5.5.9"
-    }
+    "platform-dev": []
 }
