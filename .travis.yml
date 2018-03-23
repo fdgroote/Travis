@@ -28,10 +28,5 @@ before-install:
 script:
   - phpunit
 
-deploy:
-  provider: script
-  script: bash scripts/deploy.sh
-  on:
-    branch: dev
 
-    
+
