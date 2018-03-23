@@ -28,9 +28,10 @@ before-install:
 script:
   - phpunit
 
-  # deploy master to production
 deploy:
-  - provider: script
-    script: bash scripts/deploy.sh master
-    on:
-      branch: dev
+  provider: pages
+  skip-cleanup: true
+  github-token: 1991fae2838c4c3b5ab47b619c8ddde2e8da6bef  # Set in travis-ci.org dashboard, marked secure
+  keep-history: true
+  on:
+    branch: dev
