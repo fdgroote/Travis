@@ -28,8 +28,9 @@ before-install:
 script:
   - phpunit
 
+  # deploy master to production
 deploy:
-  provider: script
-  script: bash scripts/deploy.sh
-  on:
-    branch: dev
+  - provider: script
+    script: bash scripts/deploy.sh dev
+    on:
+      branch: master
