@@ -19,7 +19,7 @@ class PostControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $client->request('GET', '/');
+        $client->request('GET', '/hello');
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
